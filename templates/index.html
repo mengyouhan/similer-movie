@@ -10,8 +10,8 @@
               $.ajax({
                 url: '/addnumber',
                 data:{
-                  a: $('#a').val(),
-                  b: $('#b').val()
+                  a: $('#a').val()
+
                 },
                 dataType: 'JSON',
                 type: 'GET',
@@ -26,15 +26,14 @@
   <body>
     <div class="container">
       <div class="header">
-        <h3 class="text-muted">addNum</h3>
+        <h3 class="text-muted">search movie</h3>
       </div>
       <hr/>
       <div>
       <p>
-    <input type="text" id='a' size="5" name="a"> +
-    <input type="text" id='b' size="5" name="b"> =
-    <span id="result">?</span>
-    <p><button class="btn btn-success" id="calculate">calculate</button>
+    <input type="text" id='a' size="15" name="a">
+    <div id="result">?</div>
+    <p><button class="btn btn-success" id="calculate">search movie</button>
       </form>
       </div>
     </div>

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-
+from sortl import SortList
 app = Flask(__name__)
 
 
@@ -11,9 +11,12 @@ def index():
 
 @app.route('/addnumber')
 def add():
-    a = request.args.get('a', 0, type=float)
-    b = request.args.get('b', 0, type=float)
-    return jsonify(result=a + b)
+    a = request.args.get('a', 0, type=str)
+    DA = SortList(a)
+    res = DA.start()
+
+    print(jsonify(result=res))
+    return jsonify(result=res)
 
 if __name__ == '__main__':
     app.run(debug=True)
